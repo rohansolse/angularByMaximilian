@@ -1,5 +1,6 @@
-<p>
-  servers works!
-</p>
+<!-- <p>servers works!</p> -->
+<button class="btn btn-primary" [disabled]="!enableServer">Add Server</button>
+<p>{{ enableServer }}</p>
+<p [innerText]="enableServer"></p>
 <app-server></app-server>
 <app-server></app-server>
