@@ -1,6 +1,11 @@
 <!-- <p>servers works!</p> -->
-<button class="btn btn-primary" [disabled]="!enableServer">Add Server</button>
-<p>{{ enableServer }}</p>
-<p [innerText]="enableServer"></p>
+<!-- <input type="text" name="" id="" class="form-control" (input)="onUpdateServerName($event)"> -->
+<input type="text" name="" id="" class="form-control" [(ngModel)]="serverName">
+<p>{{ serverName }}</p>
+<button class="btn btn-primary" [disabled]="!enableServer"
+(click)="onCreateServer()">Add Server</button>
+<p>{{ serverCreateStatus }}</p>
+<!-- <p>{{ enableServer }}</p> -->
+<!-- <p [innerText]="enableServer"></p> -->
 <app-server></app-server>
 <app-server></app-server>
