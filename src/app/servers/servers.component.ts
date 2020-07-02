@@ -9,7 +9,9 @@ import { FormsModule } from '@angular/forms';
 export class ServersComponent implements OnInit {
     enableServer: boolean = false
     serverCreateStatus: string = "No server was created"
-    serverName: string = ""
+    serverName: string = "test"
+    serverNameShow = false
+    servers = ["Test1", "Test2"]
     constructor() {
         setTimeout(() => {
             this.enableServer = true
@@ -19,11 +21,13 @@ export class ServersComponent implements OnInit {
     ngOnInit() {
     }
 
-    onCreateServer(){
-        this.serverCreateStatus = "Server was created. Name is "+ this.serverName
+    onCreateServer() {
+        this.serverNameShow = true
+        this.servers.push(this.serverName)
+        this.serverCreateStatus = "Server was created. Name is " + this.serverName
     }
 
-    onUpdateServerName(event){
+    onUpdateServerName(event) {
         // this.serverName = event.target.value
         this.serverName = (<HTMLInputElement>event.target).value
     }
