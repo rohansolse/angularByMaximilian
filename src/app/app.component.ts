@@ -7,12 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
     serverElements = [{
-        name : "Test server",
-        type : "server",
-        content : "Just a Content!"
+        name: "Test server",
+        type: "server",
+        content: "Just a Content!"
     }];
 
-    onServerAdded(severData:{serverName:'string',serverContent:'string'}) {
+    onServerAdded(severData: { serverName: 'string', serverContent: 'string' }) {
         this.serverElements.push({
             type: 'server',
             name: severData.serverName,
@@ -20,12 +20,20 @@ export class AppComponent {
         });
     }
 
-    onBlueprintAdded(blurprintData:{serverName:'string',serverContent:'string'}) {
+    onBlueprintAdded(blurprintData: { serverName: 'string', serverContent: 'string' }) {
         this.serverElements.push({
             type: 'blueprint',
             name: blurprintData.serverName,
             content: blurprintData.serverContent
         });
+    }
+
+    onChangeFirst() {
+        this.serverElements[0].name = "changed!"
+    }
+
+    onDistroyCalled() {
+        this.serverElements.splice(0, 1)
     }
 
 }
