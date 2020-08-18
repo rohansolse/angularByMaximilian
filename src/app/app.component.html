@@ -2,12 +2,25 @@
     <div class="row">
         <h3>Welcome {{ name }}</h3><br>
         <div class="col-xs-12">
-            <button class="btn btn-primary" (click)="onlyOdd = !OnlyOdd">Show Only Odd Numbers</button>
+            <button class="btn btn-primary" (click)="onlyOdd = !onlyOdd">Show Only {{ onlyOdd ? 'Even' : 'Odd'}}
+                Numbers</button>
             <br><br>
-            <ul class="list-group">
-                <li class="list-group-item">
-                </li>
-            </ul>
+            <div *ngIf="onlyOdd">
+                <ul class="list-group">
+                    <li class="list-group-item" *ngFor="let item of oddNos" [ngClass]="{odd: item % 2 != 0}"
+                        [ngStyle]="{backgroundColor: item % 2 != 0 ? 'Yellow' : 'transparent'}">{{ item }}
+                    </li>
+                </ul>
+            </div>
+            <div *ngIf="!onlyOdd">
+                <ul class="list-group">
+                    <li class="list-group-item" *ngFor="let item of evenNos" [ngClass]="{even: item % 2 == 0}"
+                        [ngStyle]="{backgroundColor: item % 2 == 0 ? 'Gray' : 'transparent'}">
+                        {{ item }}
+                    </li>
+                </ul>
+            </div>
+            <p appBasicHeighlight>This is custom directives</p>
         </div>
     </div>
 </div>

@@ -1,3 +1,11 @@
-h3{
-    color: aqua;
+h3 {
+  color: aqua;
+}
+
+.odd {
+  color: red;
+}
+
+.even {
+  color: blue;
 }
