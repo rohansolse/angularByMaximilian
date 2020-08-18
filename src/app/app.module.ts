@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { BasicHeightlightDirectives } from './basic-heighlight/basic-heighlight.directive';
+import { BetterHeighlightDirective } from './better-heighlight/better-heighlight.directive';
 @NgModule({
   declarations: [
     AppComponent,
-    BasicHeightlightDirectives
+    BasicHeightlightDirectives,
+    BetterHeighlightDirective,
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,9 @@
 import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[<%= selector %>]'
+  selector: '[appBetterHeighlight]'
 })
-export class <%= classify(name) %>Directive {
+export class BetterHeighlightDirective {
 
   constructor() { }
 
