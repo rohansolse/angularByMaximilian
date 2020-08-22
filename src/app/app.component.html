@@ -8,20 +8,44 @@
             <div *ngIf="onlyOdd">
                 <ul class="list-group">
                     <li class="list-group-item" *ngFor="let item of oddNos" [ngClass]="{odd: item % 2 != 0}"
-                        [ngStyle]="{backgroundColor: item % 2 != 0 ? 'Yellow' : 'transparent'}">{{ item }}
+                        [ngStyle]="{backgroundColor: item % 2 != 0 ? 'Gray' : 'transparent'}">{{ item }}
+                    </li>
+                </ul>
+            </div>
+            <div *appUnless="onlyOdd">
+                <ul class="list-group">
+                    <li class="list-group-item" *ngFor="let item of oddNos" [ngClass]="{odd: item % 2 != 0}"
+                        [ngStyle]="{backgroundColor: item % 2 != 0 ? 'Gray' : 'transparent'}">{{ item }}
                     </li>
                 </ul>
             </div>
             <div *ngIf="!onlyOdd">
                 <ul class="list-group">
                     <li class="list-group-item" *ngFor="let item of evenNos" [ngClass]="{even: item % 2 == 0}"
-                        [ngStyle]="{backgroundColor: item % 2 == 0 ? 'Gray' : 'transparent'}">
+                        [ngStyle]="{backgroundColor: item % 2 == 0 ? 'White' : 'transparent'}">
                         {{ item }}
                     </li>
                 </ul>
             </div>
+            <ng-template [ngIf]="!onlyOdd">
+                <div>
+                    <ul class="list-group">
+                        <li class="list-group-item" *ngFor="let item of evenNos" [ngClass]="{even: item % 2 == 0}"
+                            [ngStyle]="{backgroundColor: item % 2 == 0 ? 'White' : 'transparent'}">
+                            {{ item }}
+                        </li>
+                    </ul>
+                </div>
+            </ng-template>
+            <div [ngSwitch]="value">
+                <div *ngSwitchCase=1>One</div>
+                <div *ngSwitchCase=2>Two</div>
+                <div *ngSwitchCase=3>Three</div>
+                <div *ngSwitchDefault>I Don't have any thing to show</div>
+            </div>
+            <br>
             <p appBasicHeighlight>This is custom directives</p>
-            <p appBetterHeighlight>This is custom directives</p>
+            <p appBetterHeighlight [defaultColor]="'yellow'" [heighlightColor]="'green'">This is custom directives</p>
 
         </div>
     </div>

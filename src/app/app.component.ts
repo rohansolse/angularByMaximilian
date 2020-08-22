@@ -11,4 +11,5 @@ export class AppComponent {
   oddNos = [1, 3, 5]
   evenNos = [2, 4, 6]
   onlyOdd = false
+  value = null
 }
