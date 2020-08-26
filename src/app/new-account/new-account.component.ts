@@ -16,8 +16,8 @@ export class NewAccountComponent implements OnInit {
     }
 
     onCreateAccount(accountName: string, accountStatus: string) {
-        this.accountservice.addAccount({ name: accountName, status: accountStatus })
-        this.loggingservice.loggingStatus(accountStatus)
+        this.accountservice.addAccount(accountName, accountStatus)
+        // this.loggingservice.loggingStatus(accountStatus)
     }
 
 }
