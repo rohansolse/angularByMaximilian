@@ -17,8 +17,14 @@ export class ShoppingListService {
         return this.ingredients.slice()
     }
 
-    updateShList(ingre) {
-        this.ingredients.push(ingre)
+    updateShList(ingredient) {
+        this.ingredients.push(ingredient)
+        this.ingredientChanged.emit(this.ingredients.slice())
+    }
+
+    updateMealShList(ingredients) {
+        console.log(ingredients);
+        this.ingredients.push(...ingredients)
         this.ingredientChanged.emit(this.ingredients.slice())
     }
 }
