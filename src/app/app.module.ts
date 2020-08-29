@@ -9,21 +9,38 @@ import { ServersComponent } from './servers/servers.component';
 import { ServerComponent } from './servers/server/server.component';
 import { EditServerComponent } from './servers/edit-server/edit-server.component';
 import { HomeComponent } from './home/home.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+    {
+        path: '',
+        component: HomeComponent
+    },
+    {
+        path: 'users',
+        component: UsersComponent
+    },
+    {
+        path: 'servers',
+        component: ServersComponent
+    }
+]
 @NgModule({
-  declarations: [
-    AppComponent,
-    UsersComponent,
-    UserComponent,
-    ServersComponent,
-    ServerComponent,
-    EditServerComponent,
-    HomeComponent,
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        UsersComponent,
+        UserComponent,
+        ServersComponent,
+        ServerComponent,
+        EditServerComponent,
+        HomeComponent,
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        RouterModule.forRoot(appRoutes)
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
